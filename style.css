@@ -26,7 +26,7 @@ body {
 }
 
 /* form styling */
-#user-form {
+#input-task-form {
   max-width: 450px;
   padding: 20px;
   background-color: whitesmoke;
@@ -37,10 +37,10 @@ body {
 #input-task {
   flex: 3;
   padding: 10px;
+  border-style: none;
   margin-right: 10px;
   border-radius: 10px;
   font-size: 1.2rem;
-  color: blue;
 }
 
 #input-task:focus {
