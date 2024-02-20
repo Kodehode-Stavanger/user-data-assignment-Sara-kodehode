@@ -6,17 +6,30 @@ tasksList.classList.add("tasks-list");
 tasksContainer.append(tasksList);
 let tasks = []; // object array to hold all the tasks
 
+function loadTasks() {
+  const savedTasks = localStorage.getItem("tasks");
+  if (savedTasks) {
+    tasks = JSON.parse(savedTasks);
+    displayTasks(tasks);
+  }
+}
+
+loadTasks();
 // function to diplay each task in tasks array
 function displayTasks(tasks) {
   tasksList.textContent = ""; // clean the list to not duplicate the tasks
   tasks.forEach((e) => {
     const taskItem = document.createElement("li");
+    taskItem.classList.add("task-item");
     const taskTxt = document.createElement("span");
     const checkBox = document.createElement("input");
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("delete-btn");
+    deleteBtn.textContent = "Delete";
     checkBox.type = "checkbox";
     taskTxt.textContent = e.task;
     checkBox.checked = e.completed;
-    taskItem.append(checkBox, taskTxt);
+    taskItem.append(checkBox, taskTxt, deleteBtn);
     tasksList.append(taskItem);
   });
 }
@@ -34,6 +47,9 @@ form.addEventListener("submit", (event) => {
   taskInput.value = "";
   console.log(tasks);
   displayTasks(tasks);
+  saveTasks(tasks);
 });
 
-//function to display the tasks in the tasks container
+function saveTasks(tasks) {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}

@@ -35,7 +35,7 @@ body {
 }
 
 #input-task:focus {
-  border-color: blue;
+  border: 2px solid blue;
 }
 
 #add-task-btn {
@@ -53,6 +53,7 @@ body {
   color: whitesmoke;
 }
 
+/* task container styling */
 #tasks-container {
   padding: 20px;
 
@@ -67,7 +68,7 @@ body {
   min-height: 30px;
 }
 
-li {
+.task-item {
   display: flex;
   background-color: white;
   border-radius: 10px;
@@ -76,8 +77,24 @@ li {
   margin: 5px;
 }
 
+.task-item:hover {
+  border: 1px solid black;
+}
 span {
   flex: 6;
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+}
+
+.delete-btn {
+  flex: 1;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: whitesmoke;
+}
+
+.delete-btn:hover {
+  border-color: red;
+  color: red;
 }
