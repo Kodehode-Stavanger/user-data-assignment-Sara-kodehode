@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* body styling */
+body {
+  height: 100vh;
+  padding: 50px;
+  background-image: url(images/paper-plane.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+/* app-container-styling */
+#app-container {
+  height: 80%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+/* form styling */
+#user-form {
+  max-width: 450px;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  /* use flex to justify the size and the input-task and the button */
+  display: flex;
+}
+#input-task {
+  flex: 3;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: blue;
+}
+
+#input-task:focus {
+  border-color: blue;
+}
+
+#add-task-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background-color: whitesmoke;
+  border-color: blue;
+  color: blue;
+}
+
+#add-task-btn:hover {
+  background-color: blue;
+  color: whitesmoke;
+}
