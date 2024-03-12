@@ -18,7 +18,7 @@ loadTasks();
 // function to diplay each task in tasks array
 function displayTasks(tasks) {
   tasksList.textContent = ""; // clean the list to not duplicate the tasks
-  tasks.forEach((e) => {
+  tasks.forEach((e, index) => {
     const taskItem = document.createElement("li");
     taskItem.classList.add("task-item");
     const taskTxt = document.createElement("span");
@@ -26,6 +26,11 @@ function displayTasks(tasks) {
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("delete-btn");
     deleteBtn.textContent = "Delete";
+    deleteBtn.addEventListener("click", function () {
+      tasks.splice(index, 1);
+      saveTasks(tasks);
+      loadTasks();
+    });
     checkBox.type = "checkbox";
     taskTxt.textContent = e.task;
     checkBox.checked = e.completed;
