@@ -34,6 +34,18 @@ function displayTasks(tasks) {
     checkBox.type = "checkbox";
     taskTxt.textContent = e.task;
     checkBox.checked = e.completed;
+    checkBox.addEventListener("change", function () {
+      if (checkBox.checked) {
+        taskTxt.classList.add("completed");
+      } else {
+        taskTxt.classList.remove("completed");
+      }
+      tasks[index].completed = checkBox.checked;
+      saveTasks(tasks);
+    });
+    if (e.completed) {
+      taskTxt.classList.add("completed");
+    }
     taskItem.append(checkBox, taskTxt, deleteBtn);
     tasksList.append(taskItem);
   });
