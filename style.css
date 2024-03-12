@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* body styling */
+body {
+  height: 100vh;
+  padding: 50px;
+  background-image: url(images/paper-plane.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+/* form styling */
+#input-task-form {
+  max-width: 450px;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  /* use flex to justify the size and the input-task and the button */
+  display: flex;
+}
+#input-task {
+  flex: 2;
+  padding: 10px;
+  border-style: none;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+#input-task:focus {
+  border: 2px solid blue;
+}
+
+#add-task-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background-color: whitesmoke;
+  border-color: blue;
+  color: blue;
+}
+
+#add-task-btn:hover {
+  background-color: blue;
+  color: whitesmoke;
+}
+
+/* task container styling */
+#tasks-container {
+  padding: 20px;
+
+  background-color: whitesmoke;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.tasks-list {
+  width: 100%;
+  list-style: none;
+  min-height: 30px;
+}
+
+.task-item {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 5px;
+  margin: 5px;
+}
+
+.task-item:hover {
+  border: 1px solid black;
+}
+span {
+  flex: 6;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.delete-btn {
+  flex: 1;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: whitesmoke;
+}
+
+.delete-btn:hover {
+  border-color: red;
+  color: red;
+}
+
+.completed {
+  text-decoration: line-through;
+}
